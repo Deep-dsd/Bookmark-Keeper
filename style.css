@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla&display=swap");
+
+:root {
+  --primary-color: #7d2437;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='64' viewBox='0 0 32 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 28h20V16h-4v8H4V4h28v28h-4V8H8v12h4v-8h12v20H0v-4zm12 8h20v4H16v24H0v-4h12V36zm16 12h-4v12h8v4H20V44h12v12h-4v-8zM0 36h8v20H0v-4h4V40H0v-4z' fill='%23ffffff' fill-opacity='0.16' fill-rule='evenodd'/%3E%3C/svg%3E");
+  font-family: "Karla", sans-serif;
+}
+
+/* Add Bookmark/Open Modal Button */
+
+.add-btn {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.511);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  padding: 0.8rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: ease-in 100ms;
+}
+
+.add-btn:hover {
+  background-color: rgba(0, 0, 0, 0.608);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+/* Bookmark Container */
+
+.bookmark-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.item {
+  background-color: rgba(0, 0, 0, 0.511);
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  position: relative;
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.608);
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  margin-left: 0.3rem;
+}
+
+.name a {
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.name a:hover,
+.name a:active {
+  text-decoration: underline;
+}
+
+.name img {
+  height: 1.3rem;
+  width: 1.3rem;
+}
+
+#delete-bookmark {
+  font-size: 1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: white;
+}
+
+/* Modal Stylling */
+
+.modal-container {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.show-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bookmark-modal {
+  background-color: rgb(244, 244, 244);
+  width: 450px;
+  max-width: 95%;
+  box-shadow: 0 0 10px 0 black;
+  animation: modalopen 1s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.bookmark-modal header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
+.close-modal {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#form {
+  font-family: "Karla", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: var(--primary-color);
+}
+
+#form input {
+  outline: none;
+  color: var(--primary-color);
+  border: solid 2px var(--primary-color);
+  border-radius: 3px;
+  padding: 0.2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.save-btn {
+  margin-top: 0.5rem;
+  width: fit-content;
+  border: 0;
+  color: white;
+  background-color: var(--primary-color);
+  letter-spacing: 1px;
+  padding: 0.3rem 1.3rem;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+.save-btn:hover {
+  filter: brightness(110%);
+}
+
+@media screen and (max-width: 600px) {
+  .bookmark-container {
+    flex-direction: column;
+  }
+  .name {
+    margin-top: unset;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1100px) {
+  .bookmark-modal {
+    width: 500px;
+  }
+}
